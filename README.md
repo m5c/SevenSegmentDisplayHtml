@@ -9,8 +9,12 @@
    * Bloats / unneeded files removed.
    * Tidied up html, added some comments.
 
-## Known issues
+## Known Issues
 
  * Canvas size is hard coded.
  * Anti-aliasing is not enabled.
 
+## License / Reference
+
+ * Creative Commons 3.0 License
+ * [Original Code](http://www.3quarks.com/en/SegmentDisplay/)
