@@ -1,6 +1,6 @@
 # 7 Segment Display
 
-[time](time.png)
+![time](time.png)
 
 ## About
 
