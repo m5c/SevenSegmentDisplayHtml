@@ -3,6 +3,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>SegmentDisplay</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <!--Support for iOS HomeScreen App shortcut-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, user-scalable=no, maximum-scale=1, minimum-scale=1" />
+    <meta name="apple-mobile-web-app-title" content="Time">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
 
     <canvas id="display" width="1000" height="600" style="padding-left: 0;
     padding-right: 0;
@@ -12,7 +20,6 @@
       Your browser is unfortunately not supported.
     </canvas>
 
-<!--    COPY THIS BLOCK FROM DEMO SITE-->
     <script type="text/javascript" src="segment-display.js"></script>
     <script type="text/javascript">
       var display = new SegmentDisplay("display");
