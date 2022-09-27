@@ -9,6 +9,10 @@
    * Bloats / unneeded files removed.
    * Tidied up html, added some comments.
 
+## Access
+
+The clock demo is ready for exploration on [github pages](https://kartoffelquadrat.github.io/SevenSegmentDisplayHtml/).
+
 ## Known Issues
 
  * Canvas size is hard coded.
