@@ -11,7 +11,7 @@
 
 ## Access
 
-The clock demo is ready for exploration on [github pages](https://kartoffelquadrat.github.io/SevenSegmentDisplayHtml/).
+The clock demo is ready for exploration on [github pages](https://m5c.github.io/SevenSegmentDisplayHtml/).
 
 ## Known Issues
 
