@@ -1,64 +1,72 @@
 <html>
-  
-  <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>SegmentDisplay</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <!--Support for iOS HomeScreen App shortcut-->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, user-scalable=no, maximum-scale=1, minimum-scale=1" />
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, user-scalable=no, maximum-scale=1, minimum-scale=1"/>
     <meta name="apple-mobile-web-app-title" content="Time">
+    <link rel="stylesheet" href="style.css"/>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 
-    <canvas id="display" width="1000" height="600" style="padding-left: 0;
-    padding-right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;">
-      Your browser is unfortunately not supported.
+    <canvas id="display" width="1600" height="760" align="center">
+        Your browser is unfortunately not supported.
     </canvas>
 
     <script type="text/javascript" src="segment-display.js"></script>
+
+    <!--    to get proper anti aliasing, the canvas element MUST be in the header, and the width must be dynamically adapted to the screen size-->
     <script type="text/javascript">
-      var display = new SegmentDisplay("display");
-      display.pattern         = "##:##:##";
-      display.displayAngle    = 5.5;
-      display.digitHeight     = 27;
-      display.digitWidth      = 14.5;
-      display.digitDistance   = 1.9;
-      display.segmentWidth    = 2.3;
-      display.segmentDistance = 0.6;
-      display.segmentCount    = 7;
-      display.cornerType      = 3;
-      display.colorOn         = "#ffffff";
-      display.colorOff        = "#212021";
-      display.draw();
+        window.addEventListener('resize', function (event) {
+            document.getElementById("display").setAttribute("width", window.innerWidth * 0.9);
+            document.getElementById("display").setAttribute("height", window.innerHeight * 0.9);
 
-      display.setValue('12:34:56');
+        }, true);
+    </script>
+    <script type="text/javascript">
+        document.getElementById("display").setAttribute("width", window.innerWidth * 0.9);
+        document.getElementById("display").setAttribute("height", window.innerHeight * 0.9);
+        var display = new SegmentDisplay("display");
+        display.pattern = "##:##:##";
+        display.displayAngle = 5.5;
+        display.digitHeight = 27;
+        display.digitWidth = 14.5;
+        display.digitDistance = 1.9;
+        display.segmentWidth = 2.3;
+        display.segmentDistance = 0.6;
+        display.segmentCount = 7;
+        display.cornerType = 3;
+        display.colorOn = "#ffffff";
+        display.colorOff = "#212021";
+        display.draw();
 
-      window.setInterval('animate()', 100);
+        display.setValue('12:34:56');
 
-      function animate() {
-        var time    = new Date();
-        var hours   = time.getHours();
-        var minutes = time.getMinutes();
-        var seconds = time.getSeconds();
-        var value   = ((hours < 10) ? ' ' : '') + hours
+        window.setInterval('animate()', 100);
+
+        function animate() {
+            var time = new Date();
+            var hours = time.getHours();
+            var minutes = time.getMinutes();
+            var seconds = time.getSeconds();
+            var value = ((hours < 10) ? ' ' : '') + hours
                 + ':' + ((minutes < 10) ? '0' : '') + minutes
                 + ':' + ((seconds < 10) ? '0' : '') + seconds;
-        display.setValue(value);
-      }
+            display.setValue(value);
+        }
 
 
     </script>
 
-    <body style="background-color: black; transform: scale(0.6);">
-  </body>
-    
-  </head>
-  
+<body>
+</body>
 
-  
+</head>
+
+
 </html>

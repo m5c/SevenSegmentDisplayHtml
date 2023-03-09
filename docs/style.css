@@ -1,0 +1,9 @@
+body {
+    width: 99%;
+    text-align:center;
+    background-color: black;
+}
+
+display {
+    display: inline;
+}
